@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+
+
+{% endblock %}
+
+{% block title %}Modif Blog{% endblock %}
+
+{% block content %}
+    <h1> 
+        {% if isModification  %}
+        Modification de l'article : {{ blog.titre }} 
+        {% else %}
+        Creation d'un article
+        {% endif %}
+    </h1>
+    <div class="container">
+    {{form_start(form)}}
+        {{form_row(form.titre, {'attr' : {'class' : 'toto'},  "label" : "Titre : "})}}
+        {{form_row(form.article, {'attr' : {'class' : 'contenue'}, "label" : "Contenu : "})}}
+        {{form_row(form.auteur, {'attr' : {'class' : 'toto'}, "label" : "Auteur : "})}}
+        {{form_row(form.images, {'attr' : {'class' : 'toto'}, "label" : "L'image : "})}}
+        {{form_widget(form)}}
+        <input type="submit" class="btn" value={% if isModification  %}"modifier"{% else %}"Créer"{% endif %}>
+    {{form_end(form)}}
+    </div>
+
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

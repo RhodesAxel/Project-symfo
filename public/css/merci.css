@@ -1,0 +1,28 @@
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.merci {
+    margin: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+   }
+.merci h1 {
+    font-size: 4em;
+    color: deepskyblue;
+}
+.merci p {
+    font-size: 3em;
+}
+.merci a {
+    text-decoration: none;
+    color: deepskyblue;
+    font-size: 2em;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

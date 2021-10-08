@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+<link rel="stylesheet" href="{{ asset('css/header.css') }}">
+
+
+{% endblock %}
+{% block title %}Création de compte{% endblock %}
+
+{% block content %}
+
+    <h1> 
+        {% if isModification  %}
+        Modification du compte: {{ compte.nom }} 
+        {% else %}
+        Inscription a la News Letter 
+        {% endif %}
+    </h1>
+    <div class="container">
+    {{form_start(form, {'attr' : {'class' : 'inscr'}})}}
+    <ul>
+        <li>{{form_row(form.nom, {'attr' : {'class' : 'toto'}, "label" : " nom :"})}}</li>
+        <li>{{form_row(form.prenom, {'attr' : {'class' : 'toto'}, "label" : " prenom :"})}}</li>
+        <li>{{form_row(form.email, {'attr' : {'class' : 'toto'}, "label" : " email : "})}}</li>
+        <li>{{form_row(form.ville, {'attr' : {'class' : 'toto'}, "label" : " ville :"})}}</li>
+        <li>{{form_row(form.CP, {'attr' : {'class' : 'toto'}, "label" : " Code Postal :"})}}</li>
+        {{form_widget(form)}}
+        <input type="submit" class="submit" value={% if isModification  %}"modifier"{% else %}"S'inscrire"{% endif %}>
+    </ul>
+    {{form_end(form)}}
+
+</div>
+    {% block footer %}
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,83 @@
+body{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+footer {
+    margin-top: 60px;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.child{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+/*FOOTER QUI SOMMES NOUS*/
+.nous{
+    margin-top: 10px;
+}
+
+/*FOOTER PARTENAIRES ET SPONSORS*/
+.partenaires img{
+    width: 90px;
+    height: 90px;
+    margin-top: 25px;
+}
+.uber{
+    margin-right: 50px;
+}
+.just{
+    margin-left: 50px;
+    height: 120px;
+}
+
+.flex .liens a:hover{
+    color: deepskyblue;
+}
+
+/*FOOTER LIENS CLIQUABLES*/
+.flex{
+    display: flex;
+    margin-left: 50px;
+    padding: 10px;
+    list-style: none;
+  }
+.liens{
+    width: 294px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.liens a{
+    text-decoration: none;
+    color: black;
+}
+
+
+/*FOOTER RESEAUX SOCIAUX*/
+.reseaux{
+    color: black;
+    margin: auto;
+}
+.reseaux ul {
+    margin-top: -1px;
+    display: grid;
+}
+.fa-facebook, .fa-instagram, .fa-twitter, .fa-tripadvisor{
+    color: black;
+}
+.fa-instagram{
+    margin-top: 5px;
+}
+.fa-facebook:hover, .fa-instagram:hover, .fa-twitter:hover, .fa-tripadvisor:hover{
+    color: deepskyblue;
+    transition-duration: 0.4s;
+}

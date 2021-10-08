@@ -1,0 +1,81 @@
+html{
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 1000px;
+}
+/*HEADER*/
+
+/*1e partie page d'accueil*/
+.accueil{
+    width: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/img1.jpg");
+    background-size: cover;
+}
+/*HEADER*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+header .navigation{
+    position: relative;
+    display: flex;
+    padding-left: 150px;
+}
+header .navigation li{
+    list-style: none;
+    margin-left: 30px;
+}
+header .navigation li a{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 300;
+}
+header .logo{
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+    font-size: 3em;
+    text-decoration: none;
+}
+header .logo span{
+    color: deepskyblue;
+}
+/*HEADER javascript*/
+header{
+    background: white;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+header  a{
+    color: #111;
+}
+header .navigation li a{
+    color: #111;
+}
+header .navigation li a:hover{
+    color: deepskyblue;
+}
+header .navigation li :hover{
+    color: deepskyblue;
+}
+
+.accueil .content{
+    text-align: center;
+    max-width: 900px;
+}

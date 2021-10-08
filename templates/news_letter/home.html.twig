@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/accueil.css') }}">
+        <title>Le coin du pêcheur</title>
+    </head>
+
+<header>
+    <a href="#" class="logo">LE COIN DU PECHEUR<span>.</span></a>
+        <ul class="navigation">
+            <li><a href="#accueil">ACCUEIL</a></li>
+            <li><a href="#nous">NOUS</a></li>
+            <li><a href="#equipe">NOTRE EQUIPE</a></li>
+            <li><a href="#avis">AVIS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="{{path('blog')}}">BLOG</a></li>
+        </ul>
+</header>
+
+<body>
+
+    <!--TEXTE ECRIS SUR LE BACKGROUND DE L'ACCUEIL-->
+    <section class="accueil" id="accueil">
+        <div class="content">
+            <button class="btn"><a href="/img/carte.jpg" target="_blank" > NOTRE CARTE</a></button>
+        </div>
+    </section>
+    
+    <!--SPAWN DE L'ONGLET INSCRIPTION-->
+    <section class="spawn" data-aos="zoom-in">
+        <div class="annonce">
+            <h2>15%</h2>
+            <p>Bénéficiez d'une offre exceptionnelle de 15% à valoir sur votre premère commande en vous inscrivant à notre newsletter afin de recevoir plein d'autres offres gourmandes!</p>
+            <button class="inscription"><a href="{{path('creer_compte')}}">S'INSCRIRE</a></button>
+        </div>
+    </section>
+    
+    <!--ONGLET SUR L'ENTREPRISE-->
+    <section class="nous" id="nous">
+        <div class="row">
+            <div class="col150">
+                <h2 class="titre"><span>N</span>OUS</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores assumenda, atque autem beatae commodi, consequuntur doloremque harum iste iusto libero maiores obcaecati officia quam quas quidem quis quos ratione suscipit!<br><br>Aspernatur autem culpa deleniti impedit nesciunt perspiciatis quae soluta. Cumque deleniti doloribus eaque eligendi maiores possimus tempora voluptates? Porro, voluptatibus?</p>
+            </div>
+            <div class="col150">
+                <div class="img1">
+                    <img src="img/img2.jpg" alt="image de poissons fraîchements pêchés">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--ONGLET SUR L'EQUIPE DU RESTAURANT AVEC LES 3 CHEFS-->
+    <section class="equipe" id="equipe">
+        <h2 class="titre">Notre <span>E</span>quipe</h2>
+        <div class="cuisine">
+            <div class="imgX">
+                <img src="img/img3.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, voluptates.</p>
+            </div>
+            <div class="imgX">
+                <img src="img/img4.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, vitae.</p>
+            </div>
+            <div class="imgX">
+                <img src="img/img5.jpg" alt="">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, mollitia!</p>
+            </div>
+        </div>
+    </section>
+    
+    <!--AVIS DES CLIENTS-->
+    <section class="testimonials" id="avis">
+        <div class="titre">Ces clients ont été <span>S</span>atisfaits</div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img/perso1.jpg" alt="">
+                </div>
+                <div class="texte">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque dolorum est exercitationem magni omnis praesentium quaerat repudiandae, vero voluptatibus?</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img/perso2.jpg" alt="">
+                </div>
+                <div class="texte">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque dolorum est exercitationem magni omnis praesentium quaerat repudiandae, vero voluptatibus?</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="img/perso3.jpg" alt="">
+                </div>
+                <div class="texte">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cumque dolorum est exercitationem magni omnis praesentium quaerat repudiandae, vero voluptatibus?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!--ONGLET CONTACT-->
+    <section class="contact" id="contact">
+        <div class="title">
+            <h2 class="titleText"><span>C</span>ontactez-nous</h2>
+        </div>
+        <div class="contactForm">
+            <h3> <span>E</span>nvoyer un message ou appelez le 04-79-00-00-00</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="Prénom et Nom">
+            </div>
+            <div class="inputBox">
+                <input type="text" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <textarea placeholder="Message"></textarea>
+            </div>
+            <div class="inputBox">
+                <input type="submit" value="Send">
+            </div>
+        </div>
+    
+    </section>
+    
+    <!--PARTIE JAVASCRIPT-->
+    <script type="text/javascript">
+        window.addEventListener('scroll', function (){
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+        document.addEventListener('scroll', () => {
+            let logo = document.querySelector('.logo')
+            if (window.scrollY > 0){
+                logo.style.color = 'black'
+            }else if (window.scrollY == 0){
+                logo.style.color = 'white'
+            }
+        })
+    
+    </script>
+    <footer>
+        <!--    LIENS CLIQUABLES DU FOOTER-->
+        <article class="flex">
+            <div class="liens">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#contact">Nous contacter ?</a></li>
+                <li><a href="#">Blog</a></li>
+            </div>
+    
+            <!--    ICONES DES RESEAUX SOCIAUX-->
+            <div class="reseaux child">
+                <ul class="icons">
+                    <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#"><i class="fab fa-instagram fa-2x"></i></i></a>
+                    <a href="#"><i class="fab fa-twitter fa-2x"></i></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor fa-2x"></i></a>
+                </ul>
+            </div>
+        </article>
+    
+        <!--    Barre de saut-->
+        <hr>
+        <!--    Barre de saut-->
+    
+        <div class="partenaires child">
+            <a href="https://www.ubereats.com/fr" target="_blank">
+                <img class="uber" src="/img/com.ubercab.eats_.png" alt="logo uber eat">
+            </a>
+            <a href="https://deliveroo.fr/fr/?utm_source=google&utm_medium=cpc&utm_term=deliveroo&utm_campaign=%2A%2A%5EAcquisition%5ESearch%5EBrand%5EFrance%5EAll%20Cities%5E%5EExact%5EAPI%5E%5E%5E%5E%5EFR%5EStrategic%5E%C2%A311252766223&utm_loc=9055311&utm_device=c&utm_adposition=&utm_network=g&utm_targetid=kwd-52577441545&gclid=Cj0KCQjwyN-DBhCDARIsAFOELTk0GTLkxq18pNmM93oySHl3ZPDah-xupi9z_L13AeuimGjPrhsWI0YaAq05EALw_wcB&gclsrc=aw.ds" target="_blank">
+                <img src="/img/deliveroo-1.png" alt="logo deliveroo">
+            </a>
+            <a href="https://www.just-eat.fr/?gclid=Cj0KCQjwyN-DBhCDARIsAFOELTm3UZaIH5DsiKQ5kfG-FDUW0QKd1KQciu5K9Bx52zDzAtmgFEOpn-waAsw9EALw_wcB&gclsrc=aw.ds" target="_blank">
+                <img class="just" src="/img/2391415-middle.png" alt="logo just eat">
+            </a>
+        </div>
+    
+        <!--    Barre de saut-->
+        <hr>
+        <!--    Barre de saut-->
+    
+        <div class="nous child">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2837.74084151001!2d-1.1661447845982849!3d44.66364627909969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd549f1b2d77adcb%3A0x3953647741fc16f!2s1%20Boulevard%20Prom.%20Veyrier%20Montagn%C3%A8res%2C%2033120%20Arcachon!5e0!3m2!1sfr!2sfr!4v1618472544094!5m2!1sfr!2sfr" width="300" height="130" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </footer>
+    </body>
+</html>

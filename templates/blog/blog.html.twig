@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/blog.css') }}">
+        <title>Le coin du pêcheur</title>
+    </head>
+
+<header>
+    <a href="#" class="logo">LE COIN DU PECHEUR<span>.</span></a>
+        <ul class="navigation">
+            <li><a href="{{path('home')}}">ACCUEIL</a></li>
+            <li><a href="{{path('home')}}">NOUS</a></li>
+            <li><a href="{{path('home')}}">NOTRE EQUIPE</a></li>
+            <li><a href="{{path('home')}}">AVIS</a></li>
+            <li><a href="{{path('home')}}">CONTACT</a></li>
+            <li><a href="{{path('blog')}}">BLOG</a></li>
+        </ul>
+</header>
+
+<body>
+
+    <!--TEXTE ECRIS SUR LE BACKGROUND DE L'ACCUEIL-->
+ 
+
+
+    <main>
+        
+{% for blogs in blog %}
+   
+    <div class="container">
+        <div class="card">
+            <div class="content">                
+                <h3>{{ blogs.titre }}</h3>
+                <img src="{{asset('img/' ~ blogs.images) }}" alt="">
+                <p>{{ blogs.article }}</p>
+                <h4>Auteur : {{blogs.auteur}}</h4>
+            </div>
+            
+            <button><a href="{{path('modif_blog', {'id': blogs.id})}}">modifier</a></button>
+            <button><a href="{{path('creer_article')}}">Ajouter article </a></button>
+            <form action="{{path('supprimer_blog', {'id': blogs.id})}}" method="POST">
+    
+                <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ blogs.id)}}">
+                <input type="submit" value="supprimer" class="suppr">
+            </form>
+           
+        </div>
+    </div>
+
+{% endfor %}
+</main>
+<footer>
+    <!--    LIENS CLIQUABLES DU FOOTER-->
+    <article class="flex">
+        <div class="liens">
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#contact">Nous contacter ?</a></li>
+            <li><a href="#">Blog</a></li>
+        </div>
+
+        <!--    ICONES DES RESEAUX SOCIAUX-->
+        <div class="reseaux child">
+            <ul class="icons">
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></i></a>
+                <a href="#"><i class="fab fa-tripadvisor fa-2x"></i></a>
+            </ul>
+        </div>
+    </article>
+
+    <!--    Barre de saut-->
+    <hr>
+    <!--    Barre de saut-->
+
+    <div class="partenaires child">
+        <a href="https://www.ubereats.com/fr">
+            <img class="uber" src="/img/com.ubercab.eats_.png" alt="logo uber eat">
+        </a>
+        <a href="https://deliveroo.fr/fr/?utm_source=google&utm_medium=cpc&utm_term=deliveroo&utm_campaign=%2A%2A%5EAcquisition%5ESearch%5EBrand%5EFrance%5EAll%20Cities%5E%5EExact%5EAPI%5E%5E%5E%5E%5EFR%5EStrategic%5E%C2%A311252766223&utm_loc=9055311&utm_device=c&utm_adposition=&utm_network=g&utm_targetid=kwd-52577441545&gclid=Cj0KCQjwyN-DBhCDARIsAFOELTk0GTLkxq18pNmM93oySHl3ZPDah-xupi9z_L13AeuimGjPrhsWI0YaAq05EALw_wcB&gclsrc=aw.ds">
+            <img src="/img/deliveroo-1.png" alt="logo deliveroo">
+        </a>
+        <a href="https://www.just-eat.fr/?gclid=Cj0KCQjwyN-DBhCDARIsAFOELTm3UZaIH5DsiKQ5kfG-FDUW0QKd1KQciu5K9Bx52zDzAtmgFEOpn-waAsw9EALw_wcB&gclsrc=aw.ds">
+            <img class="just" src="/img/2391415-middle.png" alt="logo just eat">
+        </a>
+    </div>
+
+    <!--    Barre de saut-->
+    <hr>
+    <!--    Barre de saut-->
+
+    <div class="nous child">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2837.74084151001!2d-1.1661447845982849!3d44.66364627909969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd549f1b2d77adcb%3A0x3953647741fc16f!2s1%20Boulevard%20Prom.%20Veyrier%20Montagn%C3%A8res%2C%2033120%20Arcachon!5e0!3m2!1sfr!2sfr!4v1618472544094!5m2!1sfr!2sfr" width="300" height="130" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+</footer>
+</body>
+</html>
+
